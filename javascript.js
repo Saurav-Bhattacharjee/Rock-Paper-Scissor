@@ -25,13 +25,54 @@ getComputerChoice();
     }else if(choice.toUpperCase()==="SCISSOR"){
         return "SCISSOR";
     }else{
-        display("Wrong item entered");
-        break;
+        return "Wrong key pressed";
+        
     }
 
  } 
- let x=Playerselection();
- window.alert(x);
-/* Create function Playround for one round of play and declare result  */
+ 
+/* Create function playRound for one round of play and declare result  */
+
+/*  Define playRound function with two parameters.These two parameters are the two previous functions */
+function playRound(){
+    let CompChoice=getComputerChoice();
+    let PlayerChoice=Playerselection();
+        if(PlayerChoice=="Wrong key pressed")
+        {
+            Window.alert("Match forfeit due to wrong key pressed");
+        }else if(PlayerChoice=="ROCK"&& CompChoice=="PAPER"){
+                window.alert("Computer wins");
+                return "C";
+            }else if(PlayerChoice=="ROCK"&& CompChoice=="SCISSOR"){
+                window.alert("You Win");
+                return "P";
+            }else if(PlayerChoice=="ROCK"&& CompChoice=="ROCK"){
+                window.alert("Nobody wins");
+                return "N";
+            }else if(PlayerChoice=="PAPER"&& CompChoice=="ROCK"){
+                window.alert("You win");
+                return "P";
+            }else if(PlayerChoice=="PAPER"&& CompChoice=="PAPER"){
+                window.alert("Nobody wins");
+                return "N";
+            }else if(PlayerChoice=="PAPER"&& CompChoice=="SCISSOR"){
+                window.alert("Computer wins");
+                return "C";
+            }else if(PlayerChoice=="SCISSOR"&& CompChoice=="ROCK"){
+                window.alert("Computer wins");
+                return "C";
+            }else if(PlayerChoice=="SCISSOR"&& CompChoice=="PAPER"){
+                window.alert("You win");
+                return "P";
+            }else if (PlayerChoice=="SCISSOR"&& CompChoice=="SCISSOR"){
+                window.alert("NOBODY WINS");
+                return "N";
+            }
+ }
+         
+playRound();
+
+
+
 /* Create  function game to enter no of games and give overall result */
 
