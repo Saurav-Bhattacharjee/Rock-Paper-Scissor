@@ -70,9 +70,37 @@ function playRound(){
             }
  }
          
-playRound();
 
 
 
+ 
 /* Create  function game to enter no of games and give overall result */
 
+function game(){
+/*     Enter the number of games i.e.best of how many games */
+    let n=prompt("Enter the number of games you wanna fight with??");
+/*     Enter for loop where n=no of games */
+let playerwin=0;
+let compwin=0;
+    for(let i=0;i<n;i++){
+/*         if else statement for counting the number of wins */
+let match=playRound();
+if(match=="P"){
+    playerwin=playerwin+1;
+}else if(match=="C"){
+    compwin=compwin+1;
+}else{
+/*     discard */
+
+}
+}
+if(playerwin > compwin){
+    window.alert("YOU WIN THE TOURNAMENT");
+}else if (playerwin < compwin){
+    window.alert("Shame!Computer wins the tournament");
+
+}else{
+    window.alert("Match drawn");
+}
+}
+game();
